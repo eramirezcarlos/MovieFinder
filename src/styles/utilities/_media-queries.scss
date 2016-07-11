@@ -1,0 +1,22 @@
+// Bootstrap breakpoints
+// usage: @media screen and #{$mq-md-and-higher} { ... }
+$mq-xs-and-lower: "(max-width: #{$screen-xs-max})";
+$mq-sm-and-lower: "(max-width: #{$screen-sm-max})";
+$mq-md-and-lower: "(max-width: #{$screen-md-max})";
+$mq-sm-and-higher: "(min-width: #{$screen-sm})";
+$mq-md-and-higher: "(min-width: #{$screen-md})";
+$mq-lg-and-higher: "(min-width: #{$screen-lg})";
+$mq-xs-only: "(max-width: #{$screen-xs-max})";
+$mq-sm-only: "(min-width: #{$screen-sm}) and (max-width: #{$screen-sm-max})";
+$mq-md-only: "(min-width: #{$screen-md}) and (max-width: #{$screen-md-max})";
+$mq-lg-only: "(min-width: #{$screen-lg})";
+
+// aliases
+$mq-xs: $mq-xs-and-lower;
+$mq-lg: $mq-lg-and-higher;
+$mq-xs-down: $mq-xs-and-lower;
+$mq-sm-down: $mq-sm-and-lower;
+$mq-md-down: $mq-md-and-lower;
+$mq-sm-up: $mq-sm-and-higher;
+$mq-md-up: $mq-md-and-higher;
+$mq-lg-up: $mq-lg-and-higher;

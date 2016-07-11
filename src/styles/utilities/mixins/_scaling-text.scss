@@ -1,0 +1,19 @@
+@mixin scaling-text ($xs, $sm:null, $md:null) {
+
+  // mobile first
+  font-size: $xs;
+
+  // tablet and up, if applicable
+  @if $sm {
+    @include sm-up {
+      font-size: $sm;
+    }
+  }
+
+  // desktop and up, if applicable
+  @if $md {
+    @include md-up {
+      font-size: $md;
+    }
+  }
+}

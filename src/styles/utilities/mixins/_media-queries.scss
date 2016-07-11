@@ -1,0 +1,43 @@
+@mixin xs () {
+  @media screen and #{$mq-xs} {
+    @content;
+  }
+}
+
+@mixin sm () {
+  @media screen and #{$mq-sm-only} {
+    @content;
+  }
+}
+@mixin sm-up () {
+  @media screen and #{$mq-sm-up} {
+    @content;
+  }
+}
+@mixin sm-down () {
+  @media screen and #{$mq-sm-down} {
+    @content;
+  }
+}
+
+@mixin md () {
+  @media screen and #{$mq-md-only} {
+    @content;
+  }
+}
+@mixin md-up () {
+  @media screen and #{$mq-md-up} {
+    @content;
+  }
+}
+@mixin md-down () {
+  @media screen and #{$mq-md-down} {
+    @content;
+  }
+}
+
+@mixin lg () {
+  @media screen and #{$mq-lg-only} {
+    @content;
+  }
+}

@@ -1,0 +1,60 @@
+@mixin table () {
+  display: table;
+}
+
+@mixin table-fixed () {
+  @include table;
+  table-layout: fixed;
+}
+
+@mixin table-full () {
+  @include table;
+  width: 100%;
+}
+
+@mixin table-full-fixed () {
+  @include table-fixed;
+  width: 100%;
+}
+
+@mixin table-row () {
+  display: table-row;
+}
+
+@mixin table-cell () {
+  display: table-cell;
+}
+
+@mixin table-cell-center-v () {
+  @include table-cell;
+  vertical-align: middle;
+}
+
+@mixin table-cell-center-h () {
+  @include table-cell;
+  text-align: center;
+}
+
+@mixin table-cell-center-all () {
+  @include table-cell-center-v;
+  text-align: center;
+}
+
+@mixin box () {
+  @include box-sizing(border-box);
+}
+
+@mixin box-padded-16 () {
+  @include box;
+  padding: 16px;
+}
+
+@mixin equal-width-cells () {
+  @include table-full-fixed;
+  > .cell {
+    @include table-cell-center-all;
+  }
+  > .cell + .cell {
+    border-left: solid 1px #d5d5d5;
+  }
+}
