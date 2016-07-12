@@ -19699,14 +19699,12 @@ var AppConstants = require('../constants/AppConstants');
 var AppActions = {
 
     searchMovies : function( movie ){
-        //console.log('searching for a movie ' + movie.title );
         AppDispatcher.handleViewAction({
             ActionType: AppConstants.SEARCH_MOVIES,
             movie: movie
         });
     },
     receiveMovieResults: function( movies ){
-        //console.log('last step receive movie ' + movies );
         AppDispatcher.handleViewAction({
             ActionType: AppConstants.RECEIVE_MOVIE_RESULTS,
             movies: movies
@@ -19749,7 +19747,7 @@ var App = React.createClass({displayName: "App",
     },
 
     render:function(){
-        console.log("render App", this.state.movies );
+        
         if ( this.state.movies == '' || this.state.movies === undefined){
             var movieResults = '';
         }else{
@@ -19779,14 +19777,19 @@ var Movie = React.createClass({displayName: "Movie",
 
 
         var link= 'http://www.imdb.com/title/'+ this.props.movie.imdbID;
+        if( this.props.movie.Poster === 'N/A' ){
+            var photoPlaceholder = 'http://placehold.it/120x160';
+        }else{
+            var photoPlaceholder = this.props.movie.Poster;
+        }
 
         return (
             React.createElement("div", {className: "well"}, 
                 React.createElement("div", {className: "row"}, 
-                    React.createElement("div", {className: "col-md-4"}, 
-                        React.createElement("img", {className: "thumbnail", src: this.props.movie.Poster})
+                    React.createElement("div", {className: "col-md-4 col-sm-4"}, 
+                        React.createElement("img", {className: "img-thumbnail img-responsive", src: photoPlaceholder})
                     ), 
-                    React.createElement("div", {className: "col-md-8"}, 
+                    React.createElement("div", {className: "col-md-8 col-sm-8"}, 
                         React.createElement("h4", null, this.props.movie.Title, " "), 
                         React.createElement("ul", {className: "list-group"}, 
                             React.createElement("li", {className: "list-group-item"}, 
@@ -19858,8 +19861,8 @@ var SearchForm = React.createClass({displayName: "SearchForm",
                                 React.createElement("input", {type: "text", className: "form-control", ref: "title", placeholder: "Enter a Movie Title"})
 
                             ), 
-                            React.createElement("div", {className: "form-group "}, 
-                                React.createElement("button", {className: "btn btn-primary btn-block"}, "Search Movies ")
+                            React.createElement("div", {className: "form-group text-center"}, 
+                                React.createElement("button", {className: "btn btn-primary btn-default"}, "Search Movies ")
                             )
             
                         )

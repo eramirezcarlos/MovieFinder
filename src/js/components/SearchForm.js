@@ -11,8 +11,8 @@ var SearchForm = React.createClass({
                                 <input type="text" className="form-control" ref="title" placeholder="Enter a Movie Title" />
 
                             </div>
-                            <div className="form-group ">
-                                <button className="btn btn-primary btn-block" >Search Movies </button>
+                            <div className="form-group text-center">
+                                <button className="btn btn-primary btn-default" >Search Movies </button>
                             </div>
             
                         </form>

@@ -28,7 +28,7 @@ var App = React.createClass({
     },
 
     render:function(){
-        console.log("render App", this.state.movies );
+        
         if ( this.state.movies == '' || this.state.movies === undefined){
             var movieResults = '';
         }else{

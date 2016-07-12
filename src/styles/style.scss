@@ -31,6 +31,8 @@ MASTER: IMPORTING STYLESHEETS
 @import "utilities/media-queries";
 @import "utilities/mixins";
 
+@import 'modules/callouts';
+@import "modules/images.scss";
 
 //layout
 @import "layout/common";
